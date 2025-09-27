@@ -1,0 +1,162 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+input[type="text"], select, button{
+  font-family: inherit;
+  padding: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-inline: auto;
+  gap: 16px;
+}
+
+.duration-container{
+  display: flex;
+  align-items: center;
+}
+
+#duration{
+  flex-grow: 1;
+}
+
+button{
+  cursor: pointer;
+}
+
+.toasts-container{
+  position: absolute;
+  top: 1rem;
+  left: auto;
+  right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  padding: 0rem 1rem;
+}
+
+.toast{
+  padding: 0.5rem;
+  color: white;
+  background-color: pink;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.25);
+  animation: fromLeft 0.1s ease-in;
+}
+
+.toast.go-left{
+  animation: toLeft 0.1s ease-in forwards;
+}
+
+.toasts-container.right .toast.go-right{
+  animation: toRight 0.1s ease-in forwards;
+  
+}
+
+@keyframes fromLeft {
+  
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes toLeft {
+  
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+
+}
+
+@keyframes fromRight {
+  
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes toRight {
+  
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+
+}
+
+.toasts-container.right .toast{
+  animation: fromRight 0.1s ease-in forwards;
+}
+
+.toast span{
+  cursor: pointer;
+}
+
+.toast.success::before{
+  content: '👍';
+  background-color: greenyellow;
+}
+
+.toast.success{
+  background-color: greenyellow;
+}
+
+.toast.warning::before{
+  content: '😠';
+}
+
+.toast.warning{
+  background-color:#ffa6008f;
+}
+
+.toast.error::before{
+  content: '⚠';
+}
+
+.toast.error{
+  background-color: red;
+}
+
+.toast.info::before{
+  content: '❓';
+}
+
+.toast.info{
+  background-color: #4e4e4e;
+}
+
+/* .toast + .toast{
+    margin-top: 8px; 
+} */
+
+.toasts-container.right { 
+  left: auto;
+  right: 1rem;
+}
+
+.toasts-container.bottom{
+  top: auto;
+  bottom: 1rem;
+}
