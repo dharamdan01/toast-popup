@@ -29,7 +29,7 @@ A customizable **Toast Popup Web App** built using **HTML, CSS, and JavaScript**
 ---
 
 ## 🌐 Demo and Preview
-🔗 **Live Demo**: [Click Here](https://telephone-formatter-javascript.netlify.app/) 
+🔗 **Live Demo**: [Click Here](https://toast-popup-javascript.netlify.app/) 
 
 📷 **Preview Screenshot**:  
 
